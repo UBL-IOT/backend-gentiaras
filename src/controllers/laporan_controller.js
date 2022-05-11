@@ -60,6 +60,17 @@ const get = async (req, res) => {
   res.json(response);
 };
 
+const getByUser = async (req, res) => {
+  try {
+    const data = await service.getById({ USERNAME: req.username });
+    response = { ...requestResponse.success, data };
+  } catch (error) {
+    logger.error(error);
+    response = { ...requestResponse.server_error };
+  }
+  res.json(response);
+};
+
 const getById = async (req, res) => {
   try {
     const data = await service.getById({ GUID: req.params.guid });
@@ -131,5 +142,6 @@ module.exports = {
   get,
   getById,
   updateOne,
-  deleteOne
+  deleteOne,
+  getByUser
 };

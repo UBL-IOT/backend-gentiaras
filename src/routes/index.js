@@ -16,7 +16,7 @@ router.get(
   "/",
   (req, res) => {
     response = requestResponse.success;
-    response.message = "SMK Fourth Industrial Revolution - API!";
+    response.message = "Aksi Gentiaras - API!";
     res.status(response.code).json(response);
   }
 );

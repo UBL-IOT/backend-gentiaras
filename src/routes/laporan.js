@@ -18,6 +18,12 @@ router.get(
     checkRequest(requiredRequest.authorization),
     controllers.get
 );
+
+router.get(
+    "/:guid",
+    checkRequest(requiredRequest.authorization),
+    controllers.getByUser
+);
 router.get(
     "/:guid",
     checkRequest(requiredRequest.authorization),
